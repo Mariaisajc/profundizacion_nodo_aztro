@@ -106,7 +106,6 @@ function About() {
 export default About;
 
 ```
-### Rutas Dinámicas en Remix
 
 # Rutas Dinámicas en Remix
 
@@ -127,9 +126,6 @@ function Post() {
 export default Post;
 
 ```
-
-### Componente `Outlet` en Remix
-
 
 # Componente Outlet en Remix
 
