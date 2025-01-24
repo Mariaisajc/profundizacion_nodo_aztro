@@ -136,3 +136,14 @@ El componente `Outlet` es un marcador de posición donde se renderizan las rutas
 ```jsx
 // En routes/dashboard.jsx
 import { Outlet } from 'remix';
+function Dashboard() {
+  return (
+    <div>
+      <h2>Bienvenido al panel de administración</h2>
+      <Outlet /> {/* Las rutas anidadas se renderizan aquí */}
+    </div>
+  );
+}
+
+export default Dashboard;
+
