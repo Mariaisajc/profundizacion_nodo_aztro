@@ -6,10 +6,11 @@ import { matchSorter } from "match-sorter";
 // @ts-expect-error - no types, but it's a tiny function
 import sortBy from "sort-by";
 import invariant from "tiny-invariant";
+import { transformWithEsbuild } from "vite";
 
 type ContactMutation = {
   id?: string;
-  first?: string;
+  activity?: string;
   last?: string;
   avatar?: string;
   twitter?: string;
@@ -98,71 +99,73 @@ export async function deleteContact(id: string) {
 [
   {
     avatar:
-      "https://sessionize.com/image/124e-400o400o2-wHVdAuNaxi8KJrgtN3ZKci.jpg",
-    first: "Shruti",
-    last: "Kapoor",
-    twitter: "@shrutikapoor08",
+      "https://cursos.com/wp-content/uploads/2020/09/saltobase-768x576.jpg.webp",
+    first: "Bungee",
+    last: "Jumping",
+    twitter: "@colombiabungee",
   },
   {
     avatar:
-      "https://sessionize.com/image/1940-400o400o2-Enh9dnYmrLYhJSTTPSw3MH.jpg",
-    first: "Glenn",
-    last: "Reyes",
-    twitter: "@glnnrys",
+      "https://www.skydivemadrid.es/wp-content/uploads/2021/07/beneficios_del_paracaidismo.jpg",
+    first: "Salto",
+    last: "Paracaidas",
+    twitter: "@aireskydive",
   },
   {
     avatar:
-      "https://sessionize.com/image/9273-400o400o2-3tyrUE3HjsCHJLU5aUJCja.jpg",
-    first: "Ryan",
-    last: "Florence",
+      "https://colombiavuela.com/wp-content/uploads/2023/12/galeria-parapente-medellin-7.webp",
+    first: "Volar",
+    last: "en Parapente",
+    twitter: "@dragonflyparapente",
   },
   {
     avatar:
-      "https://sessionize.com/image/d14d-400o400o2-pyB229HyFPCnUcZhHf3kWS.png",
-    first: "Oscar",
-    last: "Newman",
-    twitter: "@__oscarnewman",
+      "https://www.costaricadiveandsurf.com/wp-content/uploads/2021/10/grupo-de-buzos-en-cueva-1.jpeg",
+    first: "Buceo",
+    last: "en Cuevas",
+    twitter: "@reefshepherd",
   },
   {
     avatar:
-      "https://sessionize.com/image/fd45-400o400o2-fw91uCdGU9hFP334dnyVCr.jpg",
-    first: "Michael",
-    last: "Jackson",
+      "https://escueladesurflasdunas.com/wp-content/uploads/2023/05/teahupoocylinder.jpg",
+    first: "Surf",
+    last: "de olas gigantes",
+    twitter: "@colombiasurfing",
   },
   {
     avatar:
-      "https://sessionize.com/image/b07e-400o400o2-KgNRF3S9sD5ZR4UsG7hG4g.jpg",
-    first: "Christopher",
-    last: "Chedeau",
-    twitter: "@Vjeux",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/22/99/ec/sandboarding.jpg",
+    first: "Sandboarding",
+    last: "surf en la arena",
+    twitter: "@viajes_laguajira",
   },
   {
     avatar:
-      "https://sessionize.com/image/262f-400o400o2-UBPQueK3fayaCmsyUc1Ljf.jpg",
-    first: "Cameron",
-    last: "Matheson",
-    twitter: "@cmatheson",
+      "https://imagenes.eltiempo.com/files/image_1200_600/uploads/2018/09/12/5b98a4baee23d.jpeg",
+    first: "Rafting",
+    last: "en aguas bravas",
+    twitter: "@colombiarafting",
   },
   {
     avatar:
-      "https://sessionize.com/image/820b-400o400o2-Ja1KDrBAu5NzYTPLSC3GW8.jpg",
-    first: "Brooks",
-    last: "Lybrand",
-    twitter: "@BrooksLybrand",
+      "https://i0.wp.com/justnorth.co/wp-content/uploads/2019/01/Climb-Colombia-1.jpg",
+    first: "Climbing",
+    last: "escalar montañas",
+    twitter: "@just_climb_colombia",
   },
   {
     avatar:
-      "https://sessionize.com/image/df38-400o400o2-JwbChVUj6V7DwZMc9vJEHc.jpg",
-    first: "Alex",
-    last: "Anderson",
-    twitter: "@ralex1993",
+      "https://static.roadtrip.travel/media/roadtrips/canyoning-chirajara-descenso-en-rappel-por-7-cascadas-de-aventura-1200-0eed513.jpg",
+    first: "Escalada",
+    last: "de cascadas",
+    twitter: "@brutaltravel.co",
   },
   {
     avatar:
-      "https://sessionize.com/image/5578-400o400o2-BMT43t5kd2U1XstaNnM6Ax.jpg",
-    first: "Kent C.",
-    last: "Dodds",
-    twitter: "@kentcdodds",
+      "https://cdnx.jumpseller.com/rural-adventure1/image/5300147/Copia_de_IMG_2941.jpg?1609811751",
+    first: "Canopy",
+    last: "o Tirolesa",
+    twitter: "@canopycisneros",
   },
 ].forEach((contact) => {
   fakeContacts.create({
