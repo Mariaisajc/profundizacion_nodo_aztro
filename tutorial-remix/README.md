@@ -1,38 +1,27 @@
-# Welcome to Remix!
+# Guía para Usar Remix desde un Repositorio
 
-- [Remix Docs](https://remix.run/docs)
+Este proyecto utiliza [Remix], un framework moderno para construir aplicaciones web. A continuación, te muestro cómo puedes descargar e iniciar un proyecto Remix desde este repositorio.
 
-## Development
 
-From your terminal:
+## Pasos para empezar
 
-```sh
+1. **Clona este repositorio**
+
+   Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio en tu máquina local:
+
+   git clone https://github.com/Mariaisajc/profundizacion_nodo_aztro.git
+   cd tutorial-remix
+
+2. **Instala las dependencias**
+
+Una vez dentro del directorio del proyecto, instala las dependencias necesarias. 
+A continuación, se muestra el comando para usar npm:
+
+npm install
+
+3. **Ejecuta el proyecto en tu entorno local**
+
+Una vez que las dependencias se han instalado, puedes ejecutar el proyecto localmente. Usa el siguiente comando para iniciar el servidor de desarrollo:
+
 npm run dev
-```
 
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/server`
-- `build/client`
