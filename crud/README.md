@@ -57,7 +57,6 @@ export async function action({ request }) {
 loader: Es una función que se ejecuta antes de renderizar una ruta. Se utiliza para cargar datos necesarios para esa ruta, de manera que estén disponibles cuando la página se renderice.
 
 ```jsx
-// loader.js
 export async function loader() {
   // Simulación de datos cargados
   const data = {
