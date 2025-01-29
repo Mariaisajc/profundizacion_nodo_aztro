@@ -12,7 +12,7 @@ Este proyecto utiliza [Remix], un framework moderno para construir aplicaciones 
    ```jsx
    git clone https://github.com/Mariaisajc/profundizacion_nodo_aztro.git
 
-   cd tutorial-remix
+   cd crud
 
 2. **Instala las dependencias**
 
