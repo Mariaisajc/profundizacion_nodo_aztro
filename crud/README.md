@@ -29,8 +29,9 @@ Este proyecto utiliza [Remix], un framework moderno para construir aplicaciones 
    ```jsx
    npm run dev
 
+# Funciones y Hooks en Remix
 
-## ¿Qué es action en Remix?
+## ¿Qué es action?
 
 action: Es una función que se ejecuta en respuesta a una solicitud POST, PUT, PATCH o DELETE desde el cliente. Se utiliza para manejar datos enviados por el usuario, como formularios.
 
@@ -51,7 +52,7 @@ export async function action({ request }) {
 }
 ```
 
-## ¿Qué es loader en Remix?
+## ¿Qué es loader?
 
 loader: Es una función que se ejecuta antes de renderizar una ruta. Se utiliza para cargar datos necesarios para esa ruta, de manera que estén disponibles cuando la página se renderice.
 
@@ -68,7 +69,7 @@ export async function loader() {
 }
 ```
 
-## ¿Qué es useLoaderData en Remix?
+## ¿Qué es useLoaderData?
 
 useLoaderData: Es un hook de Remix que permite acceder a los datos cargados por el loader en un componente de React. Es útil para obtener y utilizar esos datos en la renderización del componente.
 
@@ -89,7 +90,7 @@ export default function UserProfile() {
 }
 ```
 
-## ¿Qué es useActionData en Remix?
+## ¿Qué es useActionData?
 
 useActionData: Es un hook de Remix que permite acceder a los datos devueltos por una acción (action). Se utiliza para manejar la respuesta de la acción, como mostrar mensajes de error o éxito después de enviar un formulario.
 
