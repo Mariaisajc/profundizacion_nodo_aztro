@@ -61,7 +61,7 @@ export async function loader() {
   // Simulación de datos cargados
   const data = {
     nombre: "Maria",
-    apellido: "Isabel",
+    apellido: "Jimenez",
     twitter: "@mariaisajc"
   };
   return data;
@@ -87,6 +87,30 @@ export default function UserProfile() {
     </div>
   );
 }
+```
+
+## ¿Qué es invariant?
+
+invariant es una función utilizada para asegurar que ciertas condiciones sean verdaderas en tiempo de ejecución. Si la condición no se cumple, invariant lanzará un error con el mensaje proporcionado, ayudando a detectar y manejar situaciones inesperadas en el código.
+
+```jsx
+import invariant from "tiny-invariant";
+
+function getUserData(user) {
+  // Asegura que el usuario no sea nulo o indefinido
+  invariant(user, "El usuario debe estar definido");
+
+  return `Nombre: ${user.nombre}, Apellido: ${user.apellido}, Twitter: ${user.twitter}`;
+}
+
+// Uso de la función
+const usuario = {
+  nombre: "Maria",
+  apellido: "Jimenez",
+  twitter: "@mariaisajc"
+};
+
+console.log(getUserData(usuario)); // Salida: Nombre: Maria, Apellido: Jimenez, Twitter: @mariaisajc
 ```
 
 ## ¿Qué es useActionData?
