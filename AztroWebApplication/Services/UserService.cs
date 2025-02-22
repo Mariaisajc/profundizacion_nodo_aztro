@@ -34,21 +34,31 @@ namespace AztroWebApplication.Services
     // Procede a crear el usuario si es válido
     var createdUser = await userRepository.CreateUser(user);
 
-    // Imprime un mensaje de éxito y retorna el usuario creado
     Console.WriteLine("Usuario creado exitosamente.");
     return createdUser;
 }
 
 
         public async Task<User> UpdateUser(int id, User user)
-        {
-            var updatedUser = await userRepository.UpdateUser(id, user);
-            if (updatedUser == null)
-            {
-                throw new InvalidOperationException("User not found.");
-            }
-            return updatedUser;
-        }
+{
+    var existingUser = await userRepository.GetUserById(id);
+    if (existingUser == null)
+    {
+        throw new InvalidOperationException("User not found.");
+    }
+
+    // Condición ternaria para permitir la actualización de la edad solo si es >= 18
+    existingUser.Age = user.Age >= 18 ? user.Age : throw new InvalidOperationException("Age must be at least 18.");
+
+    // Actualizar otros campos del usuario
+    existingUser.Name = user.Name;
+    existingUser.Email = user.Email;
+
+    var updatedUser = await userRepository.UpdateUser(id, existingUser)
+    ?? throw new InvalidOperationException("Failed to update user.");
+
+    return updatedUser;
+}
 
         public async Task<User?> DeleteUserById(int id)
         {
